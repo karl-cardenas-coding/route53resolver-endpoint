@@ -31,22 +31,21 @@ This module creates a route53 resolver endpoint. The module leverages the aws cl
 Usage Example:
 ```terraform
 module "test-mod" {
-  source = "git::https://sfgitlab.opr.statefarm.org/PublicCloud/terraform/pcat-modules.git//route53/resolver-endpoints?ref=resolver"
   direction       = "INBOUND"
   security-groups = "sg-123456789 sg-abcdefg"
   subnet-ids      = ["subnet-123456789asaf", "subnet-123456789asaf"]
-  ip-addresses    = ["10.4.1.111", "10.4.2.111"]
+  ip-addresses    = ["10.1.1.111", "10.1.2.111"]
   endpoint-name   = "terraform-testing"
   profile         = "infra-rsch"
-  tags            = "Key=owner,Value=PCAT,Key=terraform_managed,Value=true"
+  tags            = "Key=Owner,Value=admin
 }
 
 
-output "log" {
-  value = "${module.test-mod.log}"
+output "cli-output" {
+  value = "${module.test-mod.aws-cli-output}"
 }
 
 output "resolver-id" {
-  value = "${module.test-mod.id}"
+  value = "${module.test-mod.endpoint-id}"
 }
 ```
