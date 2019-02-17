@@ -30,22 +30,22 @@ This module creates a route53 resolver endpoint. The module leverages the aws cl
 
 Usage Example:
 ```terraform
-module "test-mod" {
+module "route53resolver-endpoint" {
   direction       = "INBOUND"
   security-groups = "sg-123456789 sg-abcdefg"
   subnet-ids      = ["subnet-123456789asaf", "subnet-123456789asaf"]
   ip-addresses    = ["10.1.1.111", "10.1.2.111"]
   endpoint-name   = "terraform-testing"
-  profile         = "infra-rsch"
+  profile         = "test-env"
   tags            = "Key=Owner,Value=admin
 }
 
 
 output "cli-output" {
-  value = "${module.test-mod.aws-cli-output}"
+  value = "${module.route53resolver-endpoint.aws-cli-output}"
 }
 
 output "resolver-id" {
-  value = "${module.test-mod.endpoint-id}"
+  value = "${module.route53resolver-endpoint.endpoint-id}"
 }
 ```
