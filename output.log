@@ -1,3 +1,0 @@
-RESOLVERENDPOINT	arn:aws:route53resolver:us-east-1:140040602879:resolver-endpoint/rslvr-in-771fa0abf9d54a92b	2019-02-17T00:16:20.572Z	tf-created	INBOUND	vpc-6e92a815	rslvr-in-771fa0abf9d54a92b	2	2019-02-17T00:16:20.572Z	onpremEndpoint	CREATING	[Trace id: 1-5c68a7d3-de8a3e42c19015c259a26fb4] Creating the Resolver Endpoint
-SECURITYGROUPIDS	sg-bf067cf7
-SECURITYGROUPIDS	sg-07d713a3ded836992
